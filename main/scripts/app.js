@@ -19,7 +19,7 @@ const showInfo = () => {
 
     let currentTab = '';
     webButton.addEventListener('click', function (evt) {
-    window.location.href="https://kerkarcreations.com";
+    window.open("https://www.kerkarcreations.com/", '_blank');
     currentTab = 'web';
     });
     emailButton.addEventListener('click', function (evt) {
@@ -31,7 +31,7 @@ const showInfo = () => {
     currentTab = 'profile';
     });
     locationButton.addEventListener('click', function (evt) {
-    window.location.href="https://www.google.com/maps/place/Kathmandu+44600/";
+    window.open("https://www.google.com/maps/place/Kathmandu+44600/", '_blank');
     currentTab = 'location';
     });
 }
