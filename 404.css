@@ -24,6 +24,12 @@ body{
 	  vertical-align: middle;
 }
 
+.fof-img{
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+}
+
 .fof h1{
 	  font-size: 50px;
 	  display: inline-block;
