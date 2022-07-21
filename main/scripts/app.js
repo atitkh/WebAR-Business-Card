@@ -90,7 +90,8 @@ const showPortfolio = (done) => {
 
 const animateLogo = (onDone) => {
     const logo = document.querySelector("#cardLogo");
-    let y = -1;
+    let y = -0.4;
+    logo.setAttribute("visible", true);
     const id = setInterval(() => {
     y += 0.008;
     if (y >= 0) {
@@ -98,7 +99,7 @@ const animateLogo = (onDone) => {
         onDone();
     }
     logo.setAttribute("position", "0 " + y + " 0.01");
-    }, 10);
+    }, 15);
 }
 
 AFRAME.registerComponent('mytarget', {
@@ -106,13 +107,13 @@ AFRAME.registerComponent('mytarget', {
     this.el.addEventListener('targetFound', event => {
         console.log("target found");
         animateLogo(() => {
-        setTimeout(() => {
-            // showInfo(() => {
             setTimeout(() => {
-                // showInfo();
+                    showInfo(() => {
+                        // setTimeout(() => {
+                        //     showInfo();
+                        // }, 300);
+                    });
             }, 300);
-            // });
-        }, 300);
         });
     });
     this.el.addEventListener('targetLost', event => {

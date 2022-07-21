@@ -16,7 +16,7 @@
       </div>
         </div>
   
-        <a-scene webxr="optionalFeatures:  hit-test;" mindar-image="imageTargetSrc: ./image_tracker/card_front.mind; showStats: false; uiScanning: #example-scanning-overlay;" embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+        <a-scene mindar-image="imageTargetSrc: ./image_tracker/card_front.mind; showStats: false; uiScanning: #example-scanning-overlay;" embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
           <a-assets>
             <img id="card" src="./img/blankCard.png" />
             <img id="icon-web" src="./img/icons/web.png" />
@@ -42,9 +42,11 @@
           <a-camera position="0 0 0" look-controls="enabled: false">
           </a-camera>
   
-          <a-entity id="mytarget" visible="true" mytarget mindar-image-target="targetIndex: 0">
+          <a-entity id="cardTarget" visible="true" mytarget mindar-image-target="targetIndex: 0">
+            <!-- Base Card Image -->
             <a-plane src="#card" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
-  
+
+            <!-- Portfolio Video Panel -->
             <a-entity visible=false id="portfolio-panel" position="0 0 -0.01">
               <a-text value="Portfolio" color="black" align="center" width="2" position="0 0.4 0"></a-text>
               <a-entity id="portfolio-item0">
@@ -60,11 +62,11 @@
                 <a-image class="clickable" src="#peak-preview" alpha-test="0.5" position="0 0 0" height="0.552" width="1">
                 </a-image>
               </a-entity>
-  
+              <!-- Portfolio Buttons -->
               <a-image visible=false id="portfolio-left-button" class="clickable" src="#icon-left" position="-0.7 0 0" height="0.15" width="0.15"></a-image>
               <a-image visible=false id="portfolio-right-button" class="clickable" src="#icon-right" position="0.7 0 0" height="0.15" width="0.15"></a-image>
             </a-entity>
-  
+            <!-- Link Buttons  -->
             <a-image visible=false id="profile-button" class="clickable" src="#icon-profile" position="-0.42 -0.5 0" height="0.15" width="0.15"
               animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
             ></a-image>
@@ -80,8 +82,10 @@
             <a-image visible=false id="location-button" class="clickable" src="#icon-location" position="0.42 -0.5 0" height="0.15" width="0.15"
               animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
             ></a-image>
-  
-            <a-plane id="cardLogo" src="#companyLogo" position="0 0 0" height="0.552" width="1" rotation="0 0 0" material="depthWrite: false"></a-plane>
+            
+            <!-- card components for animation -->
+            <a-image visible=false id="cardLogo" src="#companyLogo" position="0 -0.5 0" height="0.552" width="1" rotation="0 0 0" material="transparent: true">
+            </a-image>
   
             <a-text id="text" class="clickable" value="" color="black" align="center" width="2" position="0 -0.67126 0" geometry="primitive:plane; height: 0.1; width: 2;" material="opacity: 0.5" visible="false"></a-text>
           </a-entity>
