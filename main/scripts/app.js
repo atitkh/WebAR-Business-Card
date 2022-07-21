@@ -27,7 +27,7 @@ const showInfo = () => {
     currentTab = 'email';
     });
     profileButton.addEventListener('click', function (evt) {
-    window.location.href="tel:+9779860851205";
+    window.location.href="tel:+9779745667965";
     currentTab = 'profile';
     });
     locationButton.addEventListener('click', function (evt) {
@@ -88,16 +88,16 @@ const showPortfolio = (done) => {
     }, 10);
 }
 
-const showAvatar = (onDone) => {
-    const avatar = document.querySelector("#avatar");
-    let z = -0.3;
+const animateLogo = (onDone) => {
+    const logo = document.querySelector("#cardLogo");
+    let y = -1;
     const id = setInterval(() => {
-    z += 0.008;
-    if (z >= 0.3) {
+    y += 0.008;
+    if (y >= 0) {
         clearInterval(id);
         onDone();
     }
-    avatar.setAttribute("position", "0 -0.25 " + z);
+    logo.setAttribute("position", "0 " + y + " 0.01");
     }, 10);
 }
 
@@ -105,13 +105,13 @@ AFRAME.registerComponent('mytarget', {
     init: function () {
     this.el.addEventListener('targetFound', event => {
         console.log("target found");
-        showAvatar(() => {
+        animateLogo(() => {
         setTimeout(() => {
-            showPortfolio(() => {
+            // showInfo(() => {
             setTimeout(() => {
-                showInfo();
+                // showInfo();
             }, 300);
-            });
+            // });
         }, 300);
         });
     });

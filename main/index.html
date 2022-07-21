@@ -1,4 +1,3 @@
-
 <html>
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -19,22 +18,22 @@
   
         <a-scene webxr="optionalFeatures:  hit-test;" mindar-image="imageTargetSrc: ./image_tracker/card_front.mind; showStats: false; uiScanning: #example-scanning-overlay;" embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
           <a-assets>
-            <img id="card" src="./front.png" />
-            <img id="icon-web" src="./icons/web.png" />
-            <img id="icon-location" src="./icons/location.png" />
-            <img id="icon-profile" src="./icons/profile.png" />
-            <img id="icon-phone" src="./icons/phone.png" />
-            <img id="icon-email" src="./icons/email.png" />
-            <img id="icon-play" src="./icons/play.png" />
-            <img id="icon-left" src="./icons/left.png" />
-            <img id="icon-right" src="./icons/right.png" />
-            <img id="paintandquest-preview" src="./portfolio/paintandquest-preview.png" />
-            <video id="paintandquest-video-mp4" autoplay="false" loop="true" src="./portfolio/paintandquest.mp4"></video>
-            <video id="paintandquest-video-webm" autoplay="false" loop="true" src="./portfolio/paintandquest.webm"></video>
-            <img id="coffeemachine-preview" src="./portfolio/coffeemachine-preview.png" />
-            <img id="peak-preview" src="./portfolio/peak-preview.png" />
-            
-            <a-asset-item id="avatarModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/examples/image-tracking/assets/card-example/softmind/scene.gltf"></a-asset-item>
+            <img id="card" src="./img/blankCard.png" />
+            <img id="icon-web" src="./img/icons/web.png" />
+            <img id="icon-location" src="./img/icons/location.png" />
+            <img id="icon-profile" src="./img/icons/profile.png" />
+            <img id="icon-phone" src="./img/icons/phone.png" />
+            <img id="icon-email" src="./img/icons/email.png" />
+            <img id="icon-play" src="./img/icons/play.png" />
+            <img id="icon-left" src="./img/icons/left.png" />
+            <img id="icon-right" src="./img/icons/right.png" />
+            <img id="paintandquest-preview" src="./img/portfolio/paintandquest-preview.png" />
+            <video id="paintandquest-video-mp4" autoplay="false" loop="true" src="./img/portfolio/paintandquest.mp4"></video>
+            <video id="paintandquest-video-webm" autoplay="false" loop="true" src="./img/portfolio/paintandquest.webm"></video>
+            <img id="coffeemachine-preview" src="./img/portfolio/coffeemachine-preview.png" />
+            <img id="peak-preview" src="./img/portfolio/peak-preview.png" />
+            <img id="companyLogo" src="./img/Logo.png" />
+            <!-- <a-asset-item id="avatarModel" src=""></a-asset-item> -->
           </a-assets>
 
           <a-entity cursor="fuse: false; rayOrigin: mouse;" raycaster="far: 10000; objects: .clickable">  
@@ -82,9 +81,9 @@
               animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
             ></a-image>
   
-            <a-gltf-model id="avatar" rotation="0 0 0" position="0 -0.25 0" scale="0.004 0.004 0.004" src="#avatarModel"></a-gltf-model>
+            <a-image visible="false" id="cardLogo" rotation="0 0 0" position="0 -1 0" scale="0.004 0.004 0.004" src="#companyLogo"></a-gltf-model>
   
-            <a-text id="text" class="clickable" value="" color="black" align="center" width="2" position="0 -0.67126 0" geometry="primitive:plane; height: 0.1; width: 2;" material="opacity: 0.5"></a-text>
+            <a-text id="text" class="clickable" value="" color="black" align="center" width="2" position="0 -0.67126 0" geometry="primitive:plane; height: 0.1; width: 2;" material="opacity: 0.5" visible="false"></a-text>
           </a-entity>
         </a-scene>
       </div>
