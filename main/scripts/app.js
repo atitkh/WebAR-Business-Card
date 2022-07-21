@@ -19,27 +19,20 @@ const showInfo = () => {
 
     let currentTab = '';
     webButton.addEventListener('click', function (evt) {
-    text.setAttribute("value", "https://kerkarcreations.com");
+    window.location.href="https://kerkarcreations.com";
     currentTab = 'web';
     });
     emailButton.addEventListener('click', function (evt) {
-    text.setAttribute("value", "contact@kerkarcreations.com");
+    window.location.href="mailto: contact@kerkarcreations.com";
     currentTab = 'email';
     });
     profileButton.addEventListener('click', function (evt) {
-    text.setAttribute("value", "AR, VR solutions and consultation");
+    window.location.href="tel:+9779860851205";
     currentTab = 'profile';
     });
     locationButton.addEventListener('click', function (evt) {
-    console.log("loc");
-    text.setAttribute("value", "Chabahil, Kathmandu, Nepal");
+    window.location.href="https://www.google.com/maps/place/Kathmandu+44600/";
     currentTab = 'location';
-    });
-
-    text.addEventListener('click', function (evt) {
-    if (currentTab === 'web') {
-        window.location.href="https://kerkarcreations.com";
-    }
     });
 }
 
