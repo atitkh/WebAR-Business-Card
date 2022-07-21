@@ -19,11 +19,11 @@ const showInfo = () => {
 
     let currentTab = '';
     webButton.addEventListener('click', function (evt) {
-    text.setAttribute("value", "https://softmind.tech");
+    text.setAttribute("value", "https://kerkarcreations.com");
     currentTab = 'web';
     });
     emailButton.addEventListener('click', function (evt) {
-    text.setAttribute("value", "hello@softmind.tech");
+    text.setAttribute("value", "contact@kerkarcreations.com");
     currentTab = 'email';
     });
     profileButton.addEventListener('click', function (evt) {
@@ -32,13 +32,13 @@ const showInfo = () => {
     });
     locationButton.addEventListener('click', function (evt) {
     console.log("loc");
-    text.setAttribute("value", "Vancouver, Canada | Hong Kong");
+    text.setAttribute("value", "Chabahil, Kathmandu, Nepal");
     currentTab = 'location';
     });
 
     text.addEventListener('click', function (evt) {
     if (currentTab === 'web') {
-        window.location.href="https://softmind.tech";
+        window.location.href="https://kerkarcreations.com";
     }
     });
 }
@@ -123,7 +123,7 @@ AFRAME.registerComponent('mytarget', {
         });
     });
     this.el.addEventListener('targetLost', event => {
-        console.log("target found");
+        console.log("target lost");
     });
     //this.el.emit('targetFound');
     }
