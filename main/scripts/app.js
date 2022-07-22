@@ -93,7 +93,7 @@ const animateLogo = (onDone) => {
         clearInterval(id);
         onDone();
     }
-    logo.setAttribute("position", "0 " + y + " 0.01");
+    logo.setAttribute("position", "0 " + y + " 0.02");
     }, 15);
 }
 
@@ -117,12 +117,42 @@ const animateBorders = (onDone) => {
         clearInterval(id);
         onDone();
     }
-    topBorder.setAttribute("position", xt + " 0 0.01");
-    bottomBorder.setAttribute("position", xb + " 0 0.01");
+    topBorder.setAttribute("position", xt + " 0 0.02");
+    bottomBorder.setAttribute("position", xb + " 0 0.02");
     }, 15);
+    siteText.setAttribute("position", "0 0 0.02");
     siteText.setAttribute("visible", true);
 }
 
+const resetComponents = () => {
+    const logo = document.querySelector("#cardLogo");
+    const topBorder = document.querySelector("#cardTopBorder");
+    const bottomBorder = document.querySelector("#cardBotBorder");
+    const siteText = document.querySelector("#cardSiteText");
+    const phoneButton = document.querySelector("#phone-button");
+    const webButton = document.querySelector("#web-button");
+    const emailButton = document.querySelector("#email-button");
+    const locationButton = document.querySelector("#location-button");
+    const text = document.querySelector("#text");
+
+    logo.setAttribute("visible", false);
+    logo.setAttribute("position", "0 -0.4 0.02");
+
+    topBorder.setAttribute("visible", false);
+    topBorder.setAttribute("position", "0.4 0 0.02");
+
+    bottomBorder.setAttribute("visible", false);
+    bottomBorder.setAttribute("position", "-0.4 0 0.02");
+
+    siteText.setAttribute("visible", false);
+    siteText.setAttribute("position", "0 0 0.02");
+
+    phoneButton.setAttribute("visible", false);
+    webButton.setAttribute("visible", false);
+    emailButton.setAttribute("visible", false);
+    locationButton.setAttribute("visible", false);
+    text.setAttribute("visible", false);
+}
 
 AFRAME.registerComponent('mytarget', {
     init: function () {
@@ -140,6 +170,7 @@ AFRAME.registerComponent('mytarget', {
     });
     this.el.addEventListener('targetLost', event => {
         console.log("target lost");
+        resetComponents();
     });
     //this.el.emit('targetFound');
     }
