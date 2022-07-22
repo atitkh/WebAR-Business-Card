@@ -1,12 +1,12 @@
 const showInfo = () => {
     let y = 0;
-    const profileButton = document.querySelector("#profile-button");
+    const phoneButton = document.querySelector("#phone-button");
     const webButton = document.querySelector("#web-button");
     const emailButton = document.querySelector("#email-button");
     const locationButton = document.querySelector("#location-button");
     const text = document.querySelector("#text");
 
-    profileButton.setAttribute("visible", true);
+    phoneButton.setAttribute("visible", true);
     setTimeout(() => {
     webButton.setAttribute("visible", true);
     }, 300);
@@ -17,22 +17,17 @@ const showInfo = () => {
     locationButton.setAttribute("visible", true);
     }, 900);
 
-    let currentTab = '';
     webButton.addEventListener('click', function (evt) {
     window.open("https://www.kerkarcreations.com/", '_blank');
-    currentTab = 'web';
     });
     emailButton.addEventListener('click', function (evt) {
     window.location.href="mailto: contact@kerkarcreations.com";
-    currentTab = 'email';
     });
-    profileButton.addEventListener('click', function (evt) {
+    phoneButton.addEventListener('click', function (evt) {
     window.location.href="tel:+9779745667965";
-    currentTab = 'profile';
     });
     locationButton.addEventListener('click', function (evt) {
     window.open("https://www.google.com/maps/place/Kathmandu+44600/", '_blank');
-    currentTab = 'location';
     });
 }
 
