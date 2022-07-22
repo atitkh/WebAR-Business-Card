@@ -33,6 +33,9 @@
             <img id="coffeemachine-preview" src="./img/portfolio/coffeemachine-preview.png" />
             <img id="peak-preview" src="./img/portfolio/peak-preview.png" />
             <img id="companyLogo" src="./img/Logo.png" />
+            <img id="topBorder" src="./img/Top Border.png" />
+            <img id="bottomBorder" src="./img/Bottom Border.png" />
+            <img id="siteText" src="./img/site.png" />
             <!-- <a-asset-item id="avatarModel" src=""></a-asset-item> -->
           </a-assets>
 
@@ -85,6 +88,15 @@
             
             <!-- card components for animation -->
             <a-image visible=false id="cardLogo" src="#companyLogo" position="0 -0.5 0" height="0.552" width="1" rotation="0 0 0" material="transparent: true">
+            </a-image>
+
+            <a-image visible=false id="cardTopBorder" src="#topBorder" position="0 0 0" height="0.552" width="1" rotation="0 0 0" material="transparent: true">
+            </a-image>
+
+            <a-image visible=false id="cardBotBorder" src="#bottomBorder" position="0 0 0" height="0.552" width="1" rotation="0 0 0" material="transparent: true">
+            </a-image>
+
+            <a-image visible=false id="cardSiteText" src="#siteText" position="0 0 0" height="0.552" width="1" rotation="0 0 0" material="transparent: true">
             </a-image>
   
             <a-text id="text" class="clickable" value="" color="black" align="center" width="2" position="0 -0.67126 0" geometry="primitive:plane; height: 0.1; width: 2;" material="opacity: 0.5" visible="false"></a-text>

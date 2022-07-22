@@ -97,18 +97,45 @@ const animateLogo = (onDone) => {
     }, 15);
 }
 
+const animateBorders = (onDone) => {
+    const topBorder = document.querySelector("#cardTopBorder");
+    const bottomBorder = document.querySelector("#cardBotBorder");
+    const siteText = document.querySelector("#cardSiteText");
+    let xt = 0.4;
+    let xb = -0.4;
+    topBorder.setAttribute("visible", true);
+    bottomBorder.setAttribute("visible", true);
+    const id = setInterval(() => {
+    xt -= 0.008;
+    xb += 0.008;
+    
+    if (xt <= 0) {
+        clearInterval(id);
+        onDone();
+    }
+    if (xb >= 0) {
+        clearInterval(id);
+        onDone();
+    }
+    topBorder.setAttribute("position", xt + " 0 0.01");
+    bottomBorder.setAttribute("position", xb + " 0 0.01");
+    }, 15);
+    siteText.setAttribute("visible", true);
+}
+
+
 AFRAME.registerComponent('mytarget', {
     init: function () {
     this.el.addEventListener('targetFound', event => {
         console.log("target found");
         animateLogo(() => {
             setTimeout(() => {
-                    showInfo(() => {
-                        // setTimeout(() => {
-                        //     showInfo();
-                        // }, 300);
+                    animateBorders(() => {
+                        setTimeout(() => {
+                            showInfo();
+                        }, 300);
                     });
-            }, 300);
+            }, 200);
         });
     });
     this.el.addEventListener('targetLost', event => {
