@@ -10,11 +10,14 @@
     <body>
       <div class="example-container">
         <div id="example-scanning-overlay" class="hidden">
-      <div class="inner">
-        <img src="./img/front.png"/>
-        <div class="scanline"></div>
-      </div>
+          <!-- add white text -->
+          <div class="title-text"><h2>Show Your Card</h2></div>
+          <div class="inner">
+            <img src="./img/front.png"/>
+            <div class="scanline"></div>
+          </div>
         </div>
+        
   
         <a-scene mindar-image="imageTargetSrc: ./image_tracker/card_front.mind; showStats: false; uiScanning: #example-scanning-overlay;" embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
           <a-assets>

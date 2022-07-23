@@ -60,6 +60,12 @@ display: none;
 opacity: 0.6;
 width: 90%;
 align-self: center;
+animation: grow 4s ease-in-out infinite;
+}
+@keyframes grow {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1); }
 }
 
 #example-scanning-overlay .inner .scanline {
@@ -72,4 +78,23 @@ animation: move 2s linear infinite;
 @keyframes move {
 0%, 100% { top: 0% }
 50% { top: calc(100% - 10px) }
+}
+
+#example-scanning-overlay .title-text {
+position: absolute;
+top: 15%;
+left: 50%;
+transform: translate(-50%, -50%);
+font-size: 1.5em;
+font-weight: bold;
+font-family: Helvetica;
+color: white;
+}
+
+#example-scanning-overlay .bottom-logo {
+position: absolute;
+bottom: 0;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 50%;
 }
