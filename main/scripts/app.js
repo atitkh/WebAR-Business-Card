@@ -135,6 +135,10 @@ const resetComponents = () => {
     const emailButton = document.querySelector("#email-button");
     const locationButton = document.querySelector("#location-button");
     const text = document.querySelector("#text");
+    const portfolio = document.querySelector("#portfolio-panel");
+
+    portfolio.setAttribute("visible", false);
+    portfolio.setAttribute("position", "0 0 -0.01");
 
     logo.setAttribute("visible", false);
     logo.setAttribute("position", "0 -0.4 0.01");
