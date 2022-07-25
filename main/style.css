@@ -56,7 +56,7 @@ background-size: 40px 40px;
 display: none;
 }
 
-#example-scanning-overlay img {
+#example-scanning-overlay .inner img {
 opacity: 0.6;
 width: 90%;
 align-self: center;
@@ -91,10 +91,21 @@ font-family: Helvetica;
 color: white;
 }
 
-#example-scanning-overlay .bottom-logo {
-position: absolute;
-bottom: 0;
-left: 50%;
-transform: translate(-50%, -50%);
-width: 50%;
+#example-scanning-overlay .bottom-text {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.7em;
+  font-weight: bold;
+  font-family: Helvetica;
+  color: white;
+}
+
+#example-scanning-overlay .bottom-text img {
+  position: absolute;
+  top: 125%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
 }
