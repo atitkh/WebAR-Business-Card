@@ -71,7 +71,7 @@ const animateBorders = (onDone) => {
     siteText.setAttribute("visible", true);
 }
 
-const showPortfolio = (done) => {
+const showPortfolio = () => {
     const portfolio = document.querySelector("#portfolio-panel");
     const portfolioLeftButton = document.querySelector("#portfolio-left-button");
     const portfolioRightButton = document.querySelector("#portfolio-right-button");
@@ -116,10 +116,6 @@ const showPortfolio = (done) => {
             });
 
             showPortfolioItem(0);
-
-            setTimeout(() => {
-                done();
-            }, 500);
         }
         portfolio.setAttribute("position", x + "0 -0.01");
     }, 10);
