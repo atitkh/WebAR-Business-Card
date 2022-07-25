@@ -5,7 +5,6 @@
       <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image.prod.js"></script>
       <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
       <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image-aframe.prod.js"></script>
-      <script src="./scripts/app.js"></script>
       <link rel="stylesheet" href="./style.css">
       <link rel="icon" href="./img/small_ico.ico">
     </head>
@@ -19,7 +18,7 @@
           </div>
         </div>
         
-        <a-scene inspector="url: ##" mindar-image="imageTargetSrc: ./image_tracker/card_front.mind; showStats: false; uiScanning: #example-scanning-overlay;" embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+        <a-scene inspector="url: ##" loading-screen="dotsColor: red; backgroundColor: black" mindar-image="imageTargetSrc: ./image_tracker/card_front.mind; showStats: false; uiScanning: #example-scanning-overlay;" embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
           <a-assets timeout="7000">
             <img id="card" src="./img/blankCard.png" />
             <img id="icon-web" src="./img/icons/web.png" />
@@ -97,6 +96,7 @@
           </a-entity>
         </a-scene>
       </div>
+      <script src="./scripts/app.js"></script>
     </body>
   </html>
   
