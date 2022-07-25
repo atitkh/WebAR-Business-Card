@@ -1,86 +1,33 @@
-const showInfo = () => {
+const showButtons = () => {
     let y = 0;
     const phoneButton = document.querySelector("#phone-button");
     const webButton = document.querySelector("#web-button");
     const emailButton = document.querySelector("#email-button");
     const locationButton = document.querySelector("#location-button");
-    const text = document.querySelector("#text");
 
-    phoneButton.setAttribute("visible", true);
+    emailButton.setAttribute("visible", true);
     setTimeout(() => {
-    webButton.setAttribute("visible", true);
+        webButton.setAttribute("visible", true);
     }, 300);
     setTimeout(() => {
-    emailButton.setAttribute("visible", true);
+        phoneButton.setAttribute("visible", true);
     }, 600);
     setTimeout(() => {
-    locationButton.setAttribute("visible", true);
+        locationButton.setAttribute("visible", true);
     }, 900);
 
     webButton.addEventListener('click', function (evt) {
-    window.open("https://www.kerkarcreations.com/", '_blank');
+        window.open("https://www.kerkarcreations.com/", '_blank');
     });
     emailButton.addEventListener('click', function (evt) {
-    window.location.href="mailto: contact@kerkarcreations.com";
+        window.location.href = "mailto: contact@kerkarcreations.com";
     });
     phoneButton.addEventListener('click', function (evt) {
-    window.location.href="tel:+9779745667965";
+        window.location.href = "tel:+9779745667965";
     });
     locationButton.addEventListener('click', function (evt) {
-    window.open("https://www.google.com/maps/place/Kathmandu+44600/", '_blank');
+        window.open("https://www.google.com/maps/place/Kathmandu+44600/", '_blank');
     });
-}
-
-const showPortfolio = (done) => {
-    const portfolio = document.querySelector("#portfolio-panel");
-    const portfolioLeftButton = document.querySelector("#portfolio-left-button");
-    const portfolioRightButton = document.querySelector("#portfolio-right-button");
-    const paintandquestPreviewButton = document.querySelector("#paintandquest-preview-button");
-
-    let y = 0;
-    let currentItem = 0;
-
-    portfolio.setAttribute("visible", true);
-
-    const showPortfolioItem = (item) => {
-    for (let i = 0; i <= 2; i++) {
-        document.querySelector("#portfolio-item" + i).setAttribute("visible", i === item);
-    }
-    }
-    const id = setInterval(() => {
-    y += 0.008;
-    if (y >= 0.6) {
-        clearInterval(id);
-        portfolioLeftButton.setAttribute("visible", true);
-        portfolioRightButton.setAttribute("visible", true);
-        portfolioLeftButton.addEventListener('click', () => {
-        currentItem = (currentItem + 1) % 3;
-        showPortfolioItem(currentItem);
-        });
-        portfolioRightButton.addEventListener('click', () => {
-        currentItem = (currentItem - 1 + 3) % 3;
-        showPortfolioItem(currentItem);
-        });
-
-        paintandquestPreviewButton.addEventListener('click', () => {
-        paintandquestPreviewButton.setAttribute("visible", false);
-        const testVideo = document.createElement( "video" );
-        const canplayWebm = testVideo.canPlayType( 'video/webm; codecs="vp8, vorbis"' );
-        if (canplayWebm == "") {
-            document.querySelector("#paintandquest-video-link").setAttribute("src", "#paintandquest-video-mp4");
-            document.querySelector("#paintandquest-video-mp4").play();
-        } else {
-            document.querySelector("#paintandquest-video-link").setAttribute("src", "#paintandquest-video-webm");
-            document.querySelector("#paintandquest-video-webm").play();
-        }
-        });
-
-        setTimeout(() => {
-        done();
-        }, 500);
-    }
-    portfolio.setAttribute("position", "0 " + y + " -0.01");
-    }, 10);
 }
 
 const animateLogo = (onDone) => {
@@ -88,12 +35,12 @@ const animateLogo = (onDone) => {
     let y = -0.4;
     logo.setAttribute("visible", true);
     const id = setInterval(() => {
-    y += 0.008;
-    if (y >= 0) {
-        clearInterval(id);
-        onDone();
-    }
-    logo.setAttribute("position", "0 " + y + " 0.01");
+        y += 0.008;
+        if (y >= 0) {
+            clearInterval(id);
+            onDone();
+        }
+        logo.setAttribute("position", "0 " + y + " 0.01");
     }, 15);
 }
 
@@ -106,22 +53,76 @@ const animateBorders = (onDone) => {
     topBorder.setAttribute("visible", true);
     bottomBorder.setAttribute("visible", true);
     const id = setInterval(() => {
-    xt -= 0.008;
-    xb += 0.008;
-    
-    if (xt <= 0) {
-        clearInterval(id);
-        onDone();
-    }
-    if (xb >= 0) {
-        clearInterval(id);
-        onDone();
-    }
-    topBorder.setAttribute("position", xt + " 0 0.01");
-    bottomBorder.setAttribute("position", xb + " 0 0.01");
+        xt -= 0.008;
+        xb += 0.008;
+
+        if (xt <= 0) {
+            clearInterval(id);
+            onDone();
+        }
+        if (xb >= 0) {
+            clearInterval(id);
+            onDone();
+        }
+        topBorder.setAttribute("position", xt + " 0 0.01");
+        bottomBorder.setAttribute("position", xb + " 0 0.01");
     }, 15);
     siteText.setAttribute("position", "0 0 0.01");
     siteText.setAttribute("visible", true);
+}
+
+const showPortfolio = (done) => {
+    const portfolio = document.querySelector("#portfolio-panel");
+    const portfolioLeftButton = document.querySelector("#portfolio-left-button");
+    const portfolioRightButton = document.querySelector("#portfolio-right-button");
+
+    let x = 0;
+    let currentItem = 0;
+
+    portfolio.setAttribute("visible", true);
+
+    const showPortfolioItem = (item) => {
+        const testVideo = document.createElement("video");
+        const canplayWebm = testVideo.canPlayType('video/webm; codecs="vp8, vorbis"');
+        for (let i = 0; i <= 2; i++) {
+            if (i === item) {
+                if (canplayWebm == "") {
+                    document.querySelector("#portfolio-video-link").setAttribute("src", "#portfolio"+i+"-video-mp4");
+                    document.querySelector("#portfolio"+i+"-video-mp4").play();
+                } else {
+                    document.querySelector("#portfolio-video-link").setAttribute("src", "#portfolio"+i+"-video-webm");
+                    document.querySelector("#portfolio"+i+"-video-webm").play();
+                }
+            }
+            else{
+                document.querySelector("#portfolio"+i+"-video-mp4").pause();
+                document.querySelector("#portfolio"+i+"-video-webm").pause();
+            }
+        }
+    }
+    const id = setInterval(() => {
+        x += 0.008;
+        if (x >= 0.6) {
+            clearInterval(id);
+            portfolioLeftButton.setAttribute("visible", true);
+            portfolioRightButton.setAttribute("visible", true);
+            portfolioLeftButton.addEventListener('click', () => {
+                currentItem = (currentItem + 1) % 3;
+                showPortfolioItem(currentItem);
+            });
+            portfolioRightButton.addEventListener('click', () => {
+                currentItem = (currentItem - 1 + 3) % 3;
+                showPortfolioItem(currentItem);
+            });
+
+            showPortfolioItem(0);
+
+            setTimeout(() => {
+                done();
+            }, 500);
+        }
+        portfolio.setAttribute("position", x + "0 -0.01");
+    }, 10);
 }
 
 const resetComponents = () => {
@@ -152,26 +153,33 @@ const resetComponents = () => {
     emailButton.setAttribute("visible", false);
     locationButton.setAttribute("visible", false);
     text.setAttribute("visible", false);
+
+    for(let i = 0; i <= 2; i++){
+        document.querySelector("#portfolio"+i+"-video-mp4").pause();
+        document.querySelector("#portfolio"+i+"-video-webm").pause();
+    }
 }
 
 AFRAME.registerComponent('mytarget', {
     init: function () {
-    this.el.addEventListener('targetFound', event => {
-        console.log("target found");
-        animateLogo(() => {
-            setTimeout(() => {
-                    animateBorders(() => {
-                        setTimeout(() => {
-                            showInfo();
-                        }, 300);
-                    });
-            }, 200);
+        this.el.addEventListener('targetFound', event => {
+            console.log("target found");
+            animateLogo(() => {
+                setTimeout(() => {
+                    animateBorders(showButtons);
+                    setTimeout(() => {
+                        showPortfolio();
+                    }, 300);
+                }, 200);
+            });
         });
-    });
-    this.el.addEventListener('targetLost', event => {
-        console.log("target lost");
-        resetComponents();
-    });
-    //this.el.emit('targetFound');
+        this.el.addEventListener('targetLost', event => {
+            console.log("target lost");
+            resetComponents();
+        });
+        //this.el.emit('targetFound');
     }
 });
+
+
+resetComponents();
