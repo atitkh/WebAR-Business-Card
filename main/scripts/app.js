@@ -93,7 +93,7 @@ const animateLogo = (onDone) => {
         clearInterval(id);
         onDone();
     }
-    logo.setAttribute("position", "0 " + y + " 0.02");
+    logo.setAttribute("position", "0 " + y + " 0.01");
     }, 15);
 }
 
@@ -117,10 +117,10 @@ const animateBorders = (onDone) => {
         clearInterval(id);
         onDone();
     }
-    topBorder.setAttribute("position", xt + " 0 0.02");
-    bottomBorder.setAttribute("position", xb + " 0 0.02");
+    topBorder.setAttribute("position", xt + " 0 0.01");
+    bottomBorder.setAttribute("position", xb + " 0 0.01");
     }, 15);
-    siteText.setAttribute("position", "0 0 0.02");
+    siteText.setAttribute("position", "0 0 0.01");
     siteText.setAttribute("visible", true);
 }
 
@@ -136,16 +136,16 @@ const resetComponents = () => {
     const text = document.querySelector("#text");
 
     logo.setAttribute("visible", false);
-    logo.setAttribute("position", "0 -0.4 0.02");
+    logo.setAttribute("position", "0 -0.4 0.01");
 
     topBorder.setAttribute("visible", false);
-    topBorder.setAttribute("position", "0.4 0 0.02");
+    topBorder.setAttribute("position", "0.4 0 0.01");
 
     bottomBorder.setAttribute("visible", false);
-    bottomBorder.setAttribute("position", "-0.4 0 0.02");
+    bottomBorder.setAttribute("position", "-0.4 0 0.01");
 
     siteText.setAttribute("visible", false);
-    siteText.setAttribute("position", "0 0 0.02");
+    siteText.setAttribute("position", "0 0 0.01");
 
     phoneButton.setAttribute("visible", false);
     webButton.setAttribute("visible", false);
