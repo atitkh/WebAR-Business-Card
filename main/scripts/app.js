@@ -102,7 +102,7 @@ const showPortfolio = (done) => {
     }
     const id = setInterval(() => {
         x += 0.008;
-        if (x >= 0.6) {
+        if (x >= 1) {
             clearInterval(id);
             portfolioLeftButton.setAttribute("visible", true);
             portfolioRightButton.setAttribute("visible", true);
