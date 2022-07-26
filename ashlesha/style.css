@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+}
+.example-container {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#example-scanning-overlay {
+display: flex;
+align-items: center;
+justify-content: center;
+position: absolute;
+left: 0;
+right: 0;
+top: 0;
+bottom: 0;
+background: transparent;
+z-index: 2;
+}
+@media (min-aspect-ratio: 1/1) {
+#example-scanning-overlay .inner {
+width: 50vh;
+height: 50vh;
+}
+}
+@media (max-aspect-ratio: 1/1) {
+#example-scanning-overlay .inner {
+width: 80vw;
+height: 80vw;
+}
+}
+
+#example-scanning-overlay .inner {
+display: flex;
+align-items: center;
+justify-content: center;
+position: relative;
+
+background:
+linear-gradient(to right, white 10px, transparent 10px) 0 0,
+linear-gradient(to right, white 10px, transparent 10px) 0 100%,
+linear-gradient(to left, white 10px, transparent 10px) 100% 0,
+linear-gradient(to left, white 10px, transparent 10px) 100% 100%,
+linear-gradient(to bottom, white 10px, transparent 10px) 0 0,
+linear-gradient(to bottom, white 10px, transparent 10px) 100% 0,
+linear-gradient(to top, white 10px, transparent 10px) 0 100%,
+linear-gradient(to top, white 10px, transparent 10px) 100% 100%;
+background-repeat: no-repeat;
+background-size: 40px 40px;
+}
+
+#example-scanning-overlay.hidden {
+display: none;
+}
+
+#example-scanning-overlay .inner img {
+opacity: 0.6;
+width: 90%;
+align-self: center;
+animation: grow 4s ease-in-out infinite;
+}
+@keyframes grow {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+#example-scanning-overlay .inner .scanline {
+position: absolute;
+width: 100%;
+height: 10px;
+background: white;
+animation: move 2s linear infinite;
+}
+@keyframes move {
+0%, 100% { top: 0% }
+50% { top: calc(100% - 10px) }
+}
+
+#example-scanning-overlay .title-text {
+position: absolute;
+top: 15%;
+left: 50%;
+transform: translate(-50%, -50%);
+font-size: 1em;
+font-weight: bold;
+font-family: Helvetica;
+color: white;
+}
+
+#example-scanning-overlay .bottom-text {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.7em;
+  font-weight: bold;
+  font-family: Helvetica;
+  color: white;
+}
+
+#example-scanning-overlay .bottom-text img {
+  position: absolute;
+  top: 125%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+}
