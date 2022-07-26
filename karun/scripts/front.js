@@ -23,7 +23,7 @@ const showButtons = () => {
         window.location.href = "mailto: karun@kerkarcreations.com";
     });
     phoneButton.addEventListener('click', function (evt) {
-        window.location.href = "tel:+9779860689315`";
+        window.location.href = "tel:+9779860689315";
     });
     locationButton.addEventListener('click', function (evt) {
         window.open("https://www.google.com/maps/place/Kathmandu+44600/", '_blank');
@@ -160,7 +160,7 @@ const resetComponents = () => {
     }
 }
 
-AFRAME.registerComponent('mytarget', {
+AFRAME.registerComponent('mytarget-front', {
     init: function () {
         this.el.addEventListener('targetFound', event => {
             console.log("target found");
