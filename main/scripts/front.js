@@ -160,7 +160,7 @@ const resetComponents = () => {
     }
 }
 
-AFRAME.registerComponent('mytarget', {
+AFRAME.registerComponent('mytarget-front', {
     init: function () {
         this.el.addEventListener('targetFound', event => {
             console.log("target found");
