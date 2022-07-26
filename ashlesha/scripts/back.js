@@ -1,9 +1,9 @@
-const showButtons = () => {
+const showButtonsBack = () => {
     let y = 0;
-    const phoneButton = document.querySelector("#phone-button");
-    const webButton = document.querySelector("#web-button");
-    const emailButton = document.querySelector("#email-button");
-    const locationButton = document.querySelector("#location-button");
+    const phoneButton = document.querySelector("#back-phone-button");
+    const webButton = document.querySelector("#back-web-button");
+    const emailButton = document.querySelector("#back-email-button");
+    const locationButton = document.querySelector("#back-location-button");
 
     emailButton.setAttribute("visible", true);
     setTimeout(() => {
@@ -30,8 +30,8 @@ const showButtons = () => {
     });
 }
 
-const animateLogo = (onDone) => {
-    const logo = document.querySelector("#cardLogo");
+const animateLogoBack = (onDone) => {
+    const logo = document.querySelector("#back-cardLogo");
     let y = -0.4;
     logo.setAttribute("visible", true);
     const id = setInterval(() => {
@@ -44,10 +44,10 @@ const animateLogo = (onDone) => {
     }, 15);
 }
 
-const animateBorders = (onDone) => {
-    const topBorder = document.querySelector("#cardTopBorder");
-    const bottomBorder = document.querySelector("#cardBotBorder");
-    const siteText = document.querySelector("#cardSiteText");
+const animateBordersBack = (onDone) => {
+    const topBorder = document.querySelector("#back-cardTopBorder");
+    const bottomBorder = document.querySelector("#back-cardBotBorder");
+    const siteText = document.querySelector("#back-cardSiteText");
     let xt = 0.4;
     let xb = -0.4;
     topBorder.setAttribute("visible", true);
@@ -71,10 +71,10 @@ const animateBorders = (onDone) => {
     siteText.setAttribute("visible", true);
 }
 
-const showPortfolio = () => {
-    const portfolio = document.querySelector("#portfolio-panel");
-    const portfolioLeftButton = document.querySelector("#portfolio-left-button");
-    const portfolioRightButton = document.querySelector("#portfolio-right-button");
+const showPortfolioBack = () => {
+    const portfolio = document.querySelector("#back-portfolio-panel");
+    const portfolioLeftButton = document.querySelector("#back-portfolio-left-button");
+    const portfolioRightButton = document.querySelector("#back-portfolio-right-button");
 
     let y = 0;
     let currentItem = 0;
@@ -87,10 +87,10 @@ const showPortfolio = () => {
         for (let i = 0; i <= 2; i++) {
             if (i === item) {
                 if (canplayWebm == "") {
-                    document.querySelector("#portfolio-video-link").setAttribute("src", "#portfolio"+i+"-video-mp4");
+                    document.querySelector("#back-portfolio-video-link").setAttribute("src", "#portfolio"+i+"-video-mp4");
                     document.querySelector("#portfolio"+i+"-video-mp4").play();
                 } else {
-                    document.querySelector("#portfolio-video-link").setAttribute("src", "#portfolio"+i+"-video-webm");
+                    document.querySelector("#back-portfolio-video-link").setAttribute("src", "#portfolio"+i+"-video-webm");
                     document.querySelector("#portfolio"+i+"-video-webm").play();
                 }
             }
@@ -121,17 +121,17 @@ const showPortfolio = () => {
     }, 10);
 }
 
-const resetComponents = () => {
-    const logo = document.querySelector("#cardLogo");
-    const topBorder = document.querySelector("#cardTopBorder");
-    const bottomBorder = document.querySelector("#cardBotBorder");
-    const siteText = document.querySelector("#cardSiteText");
-    const phoneButton = document.querySelector("#phone-button");
-    const webButton = document.querySelector("#web-button");
-    const emailButton = document.querySelector("#email-button");
-    const locationButton = document.querySelector("#location-button");
-    const text = document.querySelector("#text");
-    const portfolio = document.querySelector("#portfolio-panel");
+const resetComponentsBack = () => {
+    const logo = document.querySelector("#back-cardLogo");
+    const topBorder = document.querySelector("#back-cardTopBorder");
+    const bottomBorder = document.querySelector("#back-cardBotBorder");
+    const siteText = document.querySelector("#back-cardSiteText");
+    const phoneButton = document.querySelector("#back-phone-button");
+    const webButton = document.querySelector("#back-web-button");
+    const emailButton = document.querySelector("#back-email-button");
+    const locationButton = document.querySelector("#back-location-button");
+    const text = document.querySelector("#back-text");
+    const portfolio = document.querySelector("#back-portfolio-panel");
 
     portfolio.setAttribute("visible", false);
     portfolio.setAttribute("position", "0 0 -0.01");
@@ -160,22 +160,22 @@ const resetComponents = () => {
     }
 }
 
-AFRAME.registerComponent('mytarget', {
+AFRAME.registerComponent('mytarget-back', {
     init: function () {
         this.el.addEventListener('targetFound', event => {
             console.log("target found");
-            animateLogo(() => {
+            animateLogoBack(() => {
                 setTimeout(() => {
-                    animateBorders(showButtons);
+                    animateBordersBack(showButtonsBack);
                     setTimeout(() => {
-                        showPortfolio();
+                        showPortfolioBack();
                     }, 300);
                 }, 200);
             });
         });
         this.el.addEventListener('targetLost', event => {
             console.log("target lost");
-            resetComponents();
+            resetComponentsBack();
         });
         //this.el.emit('targetFound');
     }
