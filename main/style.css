@@ -57,7 +57,7 @@ display: none;
 }
 
 #example-scanning-overlay .inner img {
-opacity: 0.6;
+opacity: 0.8;
 width: 100%;
 align-self: center;
 animation: grow 4s ease-in-out infinite;
