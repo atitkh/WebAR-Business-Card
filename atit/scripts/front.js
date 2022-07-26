@@ -23,7 +23,7 @@ const showButtons = () => {
         window.location.href = "mailto: atit@kerkarcreations.com";
     });
     phoneButton.addEventListener('click', function (evt) {
-        window.location.href = "tel:+9779860851205`";
+        window.location.href = "tel:+9779860851205";
     });
     locationButton.addEventListener('click', function (evt) {
         window.open("https://www.google.com/maps/place/Kathmandu+44600/", '_blank');
