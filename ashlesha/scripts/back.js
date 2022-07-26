@@ -23,7 +23,7 @@ const showButtonsBack = () => {
         window.location.href = "mailto: ashlesha@kerkarcreations.com";
     });
     phoneButton.addEventListener('click', function (evt) {
-        window.location.href = "tel:+9779860913806`";
+        window.location.href = "tel:+9779860913806";
     });
     locationButton.addEventListener('click', function (evt) {
         window.open("https://www.google.com/maps/place/Kathmandu+44600/", '_blank');
@@ -182,4 +182,4 @@ AFRAME.registerComponent('mytarget-back', {
 });
 
 
-resetComponents();
+resetComponentsBack();
