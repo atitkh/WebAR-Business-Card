@@ -23,7 +23,7 @@ const showButtons = () => {
         window.location.href = "mailto: atit@kerkarcreations.com";
     });
     phoneButton.addEventListener('click', function (evt) {
-        window.location.href = "tel:+9779860851205";
+        window.location.href = "tel:+9779860851205`";
     });
     locationButton.addEventListener('click', function (evt) {
         window.open("https://www.google.com/maps/place/Kathmandu+44600/", '_blank');
@@ -76,7 +76,7 @@ const showPortfolio = () => {
     const portfolioLeftButton = document.querySelector("#portfolio-left-button");
     const portfolioRightButton = document.querySelector("#portfolio-right-button");
 
-    let x = 0;
+    let y = 0;
     let currentItem = 0;
 
     portfolio.setAttribute("visible", true);
@@ -101,8 +101,8 @@ const showPortfolio = () => {
         }
     }
     const id = setInterval(() => {
-        x += 0.008;
-        if (x >= 1) {
+        y += 0.008;
+        if (y >= 0.8) {
             clearInterval(id);
             portfolioLeftButton.setAttribute("visible", true);
             portfolioRightButton.setAttribute("visible", true);
@@ -117,7 +117,7 @@ const showPortfolio = () => {
 
             showPortfolioItem(0);
         }
-        portfolio.setAttribute("position", x + "0 -0.01");
+        portfolio.setAttribute("position", "0 " + y + " -0.01");
     }, 10);
 }
 
