@@ -9,6 +9,12 @@
       <link rel="icon" href="./img/small_ico.ico">
     </head>
     <body>
+      <!-- loading screen -->
+      <div id="loading-overlay" class="hidden">
+        <div class="loader" ><span>Loading...</span></div>
+      </div>
+
+      <!-- example card -->
       <div class="example-container">
         <div id="example-scanning-overlay" class="hidden">
           <div class="title-text"><h2>Show Your Card</h2></div>
@@ -24,7 +30,7 @@
           </div>
         </div>
         
-        <a-scene inspector="url: ##" loading-screen="dotsColor: red; backgroundColor: black" mindar-image="imageTargetSrc: ./image_tracker/card_atit.mind; showStats: false; uiScanning: #example-scanning-overlay;" embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+        <a-scene inspector="url: ##" loading-screen="dotsColor: red; backgroundColor: black" mindar-image="imageTargetSrc: ./image_tracker/card_atit.mind; showStats: false; uiLoading: #loading-overlay; uiScanning: #example-scanning-overlay;" embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
           <a-assets timeout="7000">
             <img id="card" src="./img/blankCard.png" />
             <img id="icon-web" src="./img/icons/web.png" />
