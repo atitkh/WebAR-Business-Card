@@ -64,8 +64,8 @@ const animateBorders = (onDone) => {
             clearInterval(id);
             onDone();
         }
-        topBorder.setAttribute("position", xt + " 0 0.01");
-        bottomBorder.setAttribute("position", xb + " 0 0.01");
+        topBorder.setAttribute("position", xt + " 0 0.015");
+        bottomBorder.setAttribute("position", xb + " 0 0.0155");
     }, 15);
     siteText.setAttribute("position", "0 0 0.01");
     siteText.setAttribute("visible", true);
